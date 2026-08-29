@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    name="description"
+    content="Paris Coleman — Computer Engineering graduate, MBA candidate, and aspiring technical program leader."
+  />
+  <title>Paris Coleman | Portfolio</title>
+
+  <style>
+    :root {
+      --purple: #7547f5;
+      --purple-light: #a47aff;
+      --purple-soft: #f5f0ff;
+      --navy: #080812;
+      --text: #171426;
+      --muted: #6f6a7d;
+      --white: #ffffff;
+      --page: #f5f4fa;
+      --line: #e6e0f1;
+      --shadow: 0 16px 42px rgba(32, 21, 73, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      background: var(--page);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    section[id],
+    article[id],
+    details[id],
+    div[id] {
+      scroll-margin-top: 76px;
+    }
+
+    .container {
+      width: min(1240px, calc(100% - 42px));
+      margin: auto;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .white-section {
+      background: white;
+    }
+
+    .soft-section {
+      background: linear-gradient(180deg, #f8f7fc, #f0eef8);
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.28em;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 45px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(16px, 5vw, 62px);
+      color: white;
+      background: rgba(8, 8, 18, 0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #8c5cff, #6132dc);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .brand-text {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .desktop-nav a {
+      color: #d8d4e2;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--purple-light);
+    }
+
+    .menu-button {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 58px;
+      left: 0;
+      right: 0;
+      padding: 12px 18px 18px;
+      background: rgba(8,8,20,0.99);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+    }
+
+    .mobile-menu.open {
+      display: grid;
+    }
+
+    .mobile-menu a {
+      padding: 11px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(
+          circle at 78% 50%,
+          rgba(136, 83, 255, 0.43),
+          transparent 34%
+        ),
+        linear-gradient(
+          110deg,
+          #05050c,
+          #0b0a1a 48%,
+          #17103f
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.42;
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.024) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.024) 1px,
+          transparent 1px
+        );
+      background-size: 52px 52px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      min-height: 610px;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-copy {
+      padding: 52px 0;
+    }
+
+    .hero-kicker {
+      margin: 0 0 13px;
+      color: var(--purple-light);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.3em;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(68px, 8vw, 112px);
+      font-weight: 400;
+      line-height: 0.82;
+      letter-spacing: -0.055em;
+    }
+
+    .hero h1 span {
+      color: var(--purple-light);
+    }
+
+    .hero-role {
+      margin: 29px 0 10px;
+      font-size: clamp(16px, 1.7vw, 22px);
+      font-weight: 750;
+    }
+
+    .divider {
+      margin: 0 7px;
+      color: var(--purple-light);
+    }
+
+    .hero-description {
+      max-width: 560px;
+      margin: 0;
+      color: #dedbe7;
+      font-size: 16px;
+    }
+
+    .work-method {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 19px;
+    }
+
+    .work-method span {
+      padding: 6px 9px;
+      border: 1px solid rgba(190,164,255,0.24);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.035);
+      color: #d9d2e8;
+      font-size: 10px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 17px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, #8658ff, #6737e6);
+      box-shadow: 0 12px 30px rgba(118,72,245,0.32);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      margin-top: 17px;
+      color: #cbc7d6;
+      font-size: 12px;
+    }
+
+    .quick-links a:hover {
+      color: white;
+    }
+
+    /* HERO PHOTO */
+
+    .hero-photo {
+      position: relative;
+      align-self: end;
+      display: flex;
+      justify-content: center;
+      padding-top: 28px;
+    }
+
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      width: 88%;
+      aspect-ratio: 1;
+      bottom: 4%;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(168,126,255,0.36),
+          rgba(93,55,190,0.09) 58%,
+          transparent 72%
+        );
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      z-index: 2;
+      width: min(560px, 100%);
+      overflow: hidden;
+      border-radius: 24px 24px 0 0;
+      box-shadow: 0 28px 45px rgba(0,0,0,0.25);
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center top;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.35fr 1.65fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about-marker {
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 13px;
+      background: var(--purple-soft);
+      border: 1px solid #c9b5ff;
+      color: var(--purple);
+      font-size: 21px;
+    }
+
+    .about-copy {
+      max-width: 850px;
+    }
+
+    .about-lead {
+      margin: 16px 0 0;
+      color: #5f5a6c;
+      font-size: 15px;
+    }
+
+    .about-more {
+      display: none;
+    }
+
+    .about-more.open {
+      display: block;
+    }
+
+    .about-more p {
+      margin: 16px 0 0;
+      color: #5f5a6c;
+      font-size: 15px;
+    }
+
+    .about-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 18px;
+      padding: 9px 13px;
+      border: 1px solid #d8cff4;
+      border-radius: 9px;
+      background: #fbf9ff;
+      color: var(--purple);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .direction-card {
+      margin-top: 20px;
+      padding: 17px 18px;
+      border-left: 4px solid var(--purple);
+      border-radius: 0 12px 12px 0;
+      background: #f8f5ff;
+      color: #514a65;
+      font-size: 14px;
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .project-image {
+      height: 205px;
+      overflow: hidden;
+      background: #12132c;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .project-body {
+      padding: 20px 21px 22px;
+    }
+
+    .project-type {
+      margin: 0;
+      color: var(--purple);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+    }
+
+    .project-body h3 {
+      margin: 7px 0 8px;
+      font-size: 21px;
+    }
+
+    .project-summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 17px;
+    }
+
+    .mini-button {
+      padding: 8px 10px;
+      border: 1px solid #d8cff4;
+      border-radius: 9px;
+      color: #5f3dd1;
+      background: #fbf9ff;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .mini-button.primary {
+      color: white;
+      border-color: var(--purple);
+      background: var(--purple);
+    }
+
+    /* CASE STUDIES */
+
+    .case-studies {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .case-study {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .case-heading {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 18px 20px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .case-heading::-webkit-details-marker {
+      display: none;
+    }
+
+    .case-number {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      color: white;
+      background: linear-gradient(135deg, #8457ff, #6336db);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .case-heading h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .case-heading p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .case-arrow {
+      color: var(--purple);
+      font-size: 18px;
+    }
+
+    details[open] .case-arrow {
+      transform: rotate(90deg);
+    }
+
+    .case-body {
+      padding: 0 20px 22px;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .case-block {
+      padding: 15px;
+      border-radius: 13px;
+      background: #f8f7fb;
+    }
+
+    .case-block h4 {
+      margin: 0 0 6px;
+      color: #5935c6;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .case-block p {
+      margin: 0;
+      color: #656071;
+      font-size: 12px;
+    }
+
+    .case-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .case-tech span {
+      padding: 5px 8px;
+      border: 1px solid #ded6f3;
+      border-radius: 999px;
+      background: white;
+      color: #504a61;
+      font-size: 9px;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 27px;
+    }
+
+    .experience-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.74);
+    }
+
+    .experience-date {
+      margin: 0;
+      color: #7050cc;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+    }
+
+    .experience-card h3 {
+      margin: 8px 0 3px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .experience-company {
+      margin: 0 0 11px;
+      color: #4e495f;
+      font-weight: 750;
+    }
+
+    .experience-description {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .skill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border: 1.5px solid #d8cff5;
+      border-radius: 999px;
+      background: white;
+      color: #4e4864;
+      font-size: 11px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    a.skill:hover,
+    a.skill:focus {
+      transform: translateY(-2px);
+      border-color: #9870ff;
+      box-shadow: 0 7px 17px rgba(118,72,245,0.12);
+      outline: none;
+    }
+
+    /* EDUCATION + CERTIFICATIONS */
+
+    .credential-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+    }
+
+    .info-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .education-item,
+    .cert-item {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .logo-box {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      overflow: hidden;
+      border: 1px solid #ece8f3;
+      border-radius: 13px;
+      background: white;
+      box-shadow: 0 5px 14px rgba(30,21,67,0.06);
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+    }
+
+    .logo-box.microsoft img {
+      transform: scale(1.75);
+    }
+
+    .logo-box.google img {
+      transform: scale(1.65);
+    }
+
+    .education-item h3,
+    .cert-item h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .education-item p,
+    .cert-item p {
+      margin: 4px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .education-item strong {
+      color: var(--purple);
+      font-size: 11px;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 0 0 58px;
+      background: white;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items: center;
+      padding: 32px 34px;
+      border-radius: 23px;
+      color: white;
+      background:
+        radial-gradient(
+          circle at 18% 20%,
+          rgba(140,88,255,0.35),
+          transparent 29%
+        ),
+        linear-gradient(
+          115deg,
+          #19163f,
+          #0d0d27
+        );
+      box-shadow: 0 20px 45px rgba(30,18,72,0.15);
+    }
+
+    .contact-card .section-label {
+      color: #c7b2ff;
+    }
+
+    .contact-card h2 {
+      margin: 0 0 10px;
+      font-size: clamp(29px, 4vw, 40px);
+      line-height: 1.08;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: #d5d1df;
+      font-size: 14px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .contact-buttons a {
+      flex: 1 1 110px;
+      padding: 11px 12px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .contact-buttons a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 22px 20px;
+      background: var(--navy);
+      color: #aaa6b5;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 50px 0 20px;
+      }
+
+      .hero-photo-frame {
+        width: min(560px, 90%);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .credential-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      .site-header {
+        height: 54px;
+        padding: 0 15px;
+      }
+
+      .mobile-menu {
+        top: 54px;
+      }
+
+      .brand-icon {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+      .menu-button {
+        font-size: 23px;
+      }
+
+      .container {
+        width: calc(100% - 34px);
+      }
+
+      .section {
+        padding: 44px 0;
+      }
+
+      .hero-inner {
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 38px 0 18px;
+      }
+
+      .hero h1 {
+        font-size: clamp(61px, 19vw, 78px);
+        line-height: 0.84;
+      }
+
+      .hero-role {
+        margin-top: 22px;
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .hero-description {
+        max-width: 95%;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .work-method {
+        margin-top: 16px;
+        gap: 6px;
+      }
+
+      .work-method span {
+        padding: 5px 9px;
+        font-size: 9px;
+      }
+
+      .hero-actions {
+        margin-top: 21px;
+        gap: 9px;
+      }
+
+      .hero-actions .button {
+        flex: 1 1 150px;
+      }
+
+      .button {
+        min-height: 44px;
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+
+      .quick-links {
+        margin-top: 15px;
+        gap: 15px;
+      }
+
+      .hero-photo {
+        padding-top: 12px;
+      }
+
+      .hero-photo-frame {
+        width: 96%;
+        max-width: 560px;
+        border-radius: 18px 18px 0 0;
+      }
+
+      .hero-photo-frame img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center top;
+      }
+
+      .about-grid {
+        gap: 20px;
+      }
+
+      .about-marker {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 2px;
+      }
+
+      .about-lead,
+      .about-more p {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .about-toggle {
+        margin-top: 15px;
+      }
+
+      .project-grid {
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .project-card {
+        border-radius: 17px;
+      }
+
+      .project-image {
+        height: 205px;
+      }
+
+      .project-body {
+        padding: 18px 17px 20px;
+      }
+
+      .project-body h3 {
+        margin-top: 6px;
+      }
+
+      .project-summary {
+        font-size: 12px;
+      }
+
+      .project-actions {
+        gap: 6px;
+        margin-top: 15px;
+      }
+
+      .mini-button {
+        padding: 8px 9px;
+        font-size: 10px;
+      }
+
+      .case-studies {
+        gap: 15px;
+        margin-top: 24px;
+      }
+
+      .case-heading {
+        grid-template-columns: 38px 1fr auto;
+        padding: 15px;
+      }
+
+      .case-number {
+        width: 37px;
+        height: 37px;
+      }
+
+      .case-heading h3 {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .case-heading p {
+        font-size: 11px;
+        line-height: 1.45;
+      }
+
+      .case-body {
+        padding: 0 16px 18px;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-grid {
+        gap: 15px;
+        margin-top: 23px;
+      }
+
+      .experience-card {
+        padding: 18px;
+      }
+
+      .experience-card h3 {
+        font-size: 16px;
+      }
+
+      .experience-description {
+        font-size: 12px;
+      }
+
+      .skills {
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .skill {
+        padding: 7px 11px;
+        font-size: 10px;
+      }
+
+      .credential-grid {
+        gap: 18px;
+      }
+
+      .info-card {
+        padding: 20px 17px;
+        border-radius: 18px;
+      }
+
+      .education-item,
+      .cert-item {
+        grid-template-columns: 54px 1fr;
+        gap: 14px;
+        padding: 15px 0;
+      }
+
+      .logo-box {
+        width: 50px;
+        height: 50px;
+      }
+
+      .logo-box.microsoft img {
+        transform: scale(1.9);
+      }
+
+      .logo-box.google img {
+        transform: scale(1.8);
+      }
+
+      .education-item h3,
+      .cert-item h3 {
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .education-item p,
+      .cert-item p {
+        font-size: 11px;
+        line-height: 1.45;
+      }
+
+      .contact-card {
+        padding: 24px 18px;
+        border-radius: 20px;
+      }
+
+      .contact-card h2 {
+        font-size: 29px;
+      }
+
+      .contact-card p {
+        font-size: 13px;
+      }
+
+      .contact-buttons {
+        gap: 8px;
+      }
+
+      .contact-buttons a {
+        padding: 10px;
+      }
+
+      .contact-section {
+        padding-bottom: 44px;
+      }
+
+      footer {
+        padding: 19px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a href="#home" class="brand">
+      <span class="brand-icon">PC</span>
+      <span class="brand-text">PARIS COLEMAN</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+      ☰
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#credentials">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+        <p class="hero-kicker">HELLO, I’M</p>
+
+        <h1>
+          Paris
+          <br />
+          <span>Coleman</span>
+        </h1>
+
+        <p class="hero-role">
+          Computer Engineering Graduate
+          <span class="divider">|</span>
+          MBA Candidate
+        </p>
+
+        <p class="hero-description">
+          I like turning complicated problems into practical systems
+          that actually make sense and work.
+        </p>
+
+        <div class="work-method">
+          <span>Understand</span>
+          <span>Define</span>
+          <span>Build</span>
+          <span>Test</span>
+          <span>Improve</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="button button-primary">
+            Explore My Work →
+          </a>
+
+          <a
+            href="Paris_Coleman_Resume.pdf"
+            class="button button-secondary"
+            target="_blank"
+          >
+            Download Resume ↓
+          </a>
+        </div>
+
+        <div class="quick-links">
+          <a
+            href="https://www.linkedin.com/in/pariszcoleman"
+            target="_blank"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a
+            href="https://github.com/pariscole"
+            target="_blank"
+          >
+            GitHub ↗
+          </a>
+
+          <a href="mailto:Pariscoleman433@gmail.com">
+            Email ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="hero-photo-frame">
+          <img src="IMG_7399.jpeg" alt="Paris Coleman" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section white-section" id="about">
+    <div class="container about-grid">
+
+      <div class="about-marker">✦</div>
+
+      <div class="about-copy">
+        <p class="section-label">ABOUT ME</p>
+
+        <h2 class="section-title">
+          I like figuring out how all the pieces fit together.
+        </h2>
+
+        <p class="about-lead">
+          I’m a Computer Engineering graduate working toward my MBA in
+          Project Management. What I’ve learned about myself is that I
+          really enjoy the part before the finished product —
+          understanding the problem, figuring out what people need,
+          and deciding how everything should work together.
+        </p>
+
+        <div class="about-more" id="aboutMore">
+          <p>
+            That is the mindset I brought into AssetTrack, Blueprint,
+            and StudyFlow. They are different products, but each one
+            started with a real problem that I wanted to make easier.
+            I planned the workflows, made decisions about how the systems
+            should work, built and refined them, tested them, and thought
+            about what I would improve next.
+          </p>
+
+          <p>
+            I’m building toward technical program and project leadership
+            because I want to understand the technology while also helping
+            connect the technical work to the bigger business goal.
+            I like structure, communication, problem solving, and making
+            sure good ideas actually move forward.
+          </p>
+
+          <div class="direction-card">
+            <strong>Where I’m going:</strong>
+            I want to grow into technical program leadership, learn from
+            strong engineering teams, and eventually use what I learn to
+            build businesses and solutions of my own.
+          </div>
+        </div>
+
+        <button class="about-toggle" id="aboutToggle">
+          Read more ↓
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section soft-section" id="projects">
+    <div class="container">
+
+      <p class="section-label">FEATURED WORK</p>
+
+      <h2 class="section-title">
+        Three problems. Three systems.
+      </h2>
+
+      <p class="section-intro">
+        Each project shows how I approached the problem, defined the
+        workflow, made decisions, tested the result, and planned what
+        should come next.
+      </p>
+
+      <div class="project-grid">
+
+        <article class="project-card" id="assettrack">
+          <div class="project-image">
+            <img src="IMG_7401.jpeg" alt="AssetTrack" />
+          </div>
+
+          <div class="project-body">
+            <p class="project-type">ENTERPRISE OPERATIONS</p>
+            <h3>AssetTrack</h3>
+
+            <p class="project-summary">
+              A centralized IT asset management platform that connects
+              inventory, maintenance, employee assignments, warranties,
+              financial tracking, and reporting.
+            </p>
+
+            <div class="project-actions">
+              <a href="#assettrack-case" class="mini-button primary">
+                Case Study
+              </a>
+
+              <a
+                href="https://asset-track-omega.vercel.app"
+                class="mini-button"
+                target="_blank"
+              >
+                Live Demo ↗
+              </a>
+
+              <a
+                href="https://github.com/pariscole/AssetTrack"
+                class="mini-button"
+                target="_blank"
+              >
+                View Code ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" id="blueprint">
+          <div class="project-image">
+            <img src="IMG_7403.jpeg" alt="Blueprint" />
+          </div>
+
+          <div class="project-body">
+            <p class="project-type">CAREER TECHNOLOGY</p>
+            <h3>Blueprint</h3>
+
+            <p class="project-summary">
+              An AI-powered career platform designed to help people
+              understand which roles fit them, where their gaps are,
+              and what to improve next.
+            </p>
+
+            <div class="project-actions">
+              <a href="#blueprint-case" class="mini-button primary">
+                Case Study
+              </a>
+
+              <a
+                href="https://blueprint-amber.vercel.app"
+                class="mini-button"
+                target="_blank"
+              >
+                Live Demo ↗
+              </a>
+
+              <a
+                href="https://github.com/pariscole/Blueprint-"
+                class="mini-button"
+                target="_blank"
+              >
+                View Code ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" id="studyflow">
+          <div class="project-image">
+            <img src="IMG_7402.jpeg" alt="StudyFlow" />
+          </div>
+
+          <div class="project-body">
+            <p class="project-type">ACADEMIC PRODUCTIVITY</p>
+            <h3>StudyFlow</h3>
+
+            <p class="project-summary">
+              A full-stack student platform that brings courses,
+              assignments, study planning, exams, productivity tools,
+              and AI assistance into one workflow.
+            </p>
+
+            <div class="project-actions">
+              <a href="#studyflow-case" class="mini-button primary">
+                Case Study
+              </a>
+
+              <a
+                href="https://studyflow-alpha-coral.vercel.app"
+                class="mini-button"
+                target="_blank"
+              >
+                Live Demo ↗
+              </a>
+
+              <a
+                href="https://github.com/pariscole/Studyflow-"
+                class="mini-button"
+                target="_blank"
+              >
+                View Code ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="case-studies">
+
+        <details class="case-study" id="assettrack-case">
+          <summary class="case-heading">
+            <span class="case-number">01</span>
+
+            <div>
+              <h3>AssetTrack — How I approached it</h3>
+              <p>Requirements, workflows, validation, roadmap</p>
+            </div>
+
+            <span class="case-arrow">›</span>
+          </summary>
+
+          <div class="case-body">
+            <div class="case-grid">
+
+              <div class="case-block">
+                <h4>Problem</h4>
+                <p>
+                  IT assets are often tracked in spreadsheets and
+                  disconnected systems, making equipment, maintenance,
+                  warranties, and financial visibility harder to manage.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Approach</h4>
+                <p>
+                  I defined requirements around inventory, employees,
+                  assignments, maintenance, warranty tracking, QR labeling,
+                  depreciation, and reporting.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Solution</h4>
+                <p>
+                  I built a connected platform for hardware inventory,
+                  assignments, repair tickets, warranties, financial
+                  reporting, QR labels, and analytics.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Validation</h4>
+                <p>
+                  I tested workflows across modules, reviewed and refined
+                  AI-assisted code, debugged issues, and checked that shared
+                  data stayed synchronized.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Next</h4>
+                <p>
+                  Authentication, cloud database, RBAC, audit logs,
+                  notifications, APIs, and mobile support.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>What It Shows</h4>
+                <p>
+                  Requirements gathering, systems thinking, testing,
+                  technical troubleshooting, documentation, and roadmap planning.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="case-tech">
+              <span>React 18</span>
+              <span>TypeScript</span>
+              <span>Vite</span>
+              <span>Tailwind CSS</span>
+              <span>React Context</span>
+              <span>LocalStorage</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="case-study" id="blueprint-case">
+          <summary class="case-heading">
+            <span class="case-number">02</span>
+
+            <div>
+              <h3>Blueprint — How I approached it</h3>
+              <p>Product thinking, AI architecture, roadmap</p>
+            </div>
+
+            <span class="case-arrow">›</span>
+          </summary>
+
+          <div class="case-body">
+            <div class="case-grid">
+
+              <div class="case-block">
+                <h4>Problem</h4>
+                <p>
+                  Job seekers can find openings but still struggle to
+                  understand which jobs fit them, what skills they are
+                  missing, and how to become stronger candidates.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Why It Mattered</h4>
+                <p>
+                  Blueprint came from something I experienced personally
+                  while moving from college into the job market.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Approach</h4>
+                <p>
+                  I defined the core user questions, planned the product
+                  foundation, organized the roadmap, and built the AI flow
+                  through a secure backend.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Solution</h4>
+                <p>
+                  A full-stack foundation for career recommendations,
+                  skill-gap analysis, resume improvement, job discovery,
+                  and personalized guidance.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Decisions</h4>
+                <p>
+                  I focused on scalability, security, maintainability,
+                  reusable components, and keeping sensitive AI credentials
+                  server-side.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Next</h4>
+                <p>
+                  Career readiness scoring, application tracking,
+                  interview simulation, resume optimization, salary insights,
+                  and user accounts.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="case-tech">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Vite</span>
+              <span>Tailwind CSS</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>Google Gemini</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="case-study" id="studyflow-case">
+          <summary class="case-heading">
+            <span class="case-number">03</span>
+
+            <div>
+              <h3>StudyFlow — How I approached it</h3>
+              <p>Workflow consolidation, modular design, AI assistance</p>
+            </div>
+
+            <span class="case-arrow">›</span>
+          </summary>
+
+          <div class="case-body">
+            <div class="case-grid">
+
+              <div class="case-block">
+                <h4>Problem</h4>
+                <p>
+                  Students often manage courses, assignments, calendars,
+                  study tools, and AI across several disconnected applications.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Approach</h4>
+                <p>
+                  I organized those disconnected activities into one student
+                  workflow covering courses, assignments, exams, study planning,
+                  focus, and analytics.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Solution</h4>
+                <p>
+                  StudyFlow combines course management, assignment tracking,
+                  a study planner, exam center, Pomodoro timer, analytics,
+                  backup/restore, and AI assistance.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Architecture</h4>
+                <p>
+                  Modular React components and shared state connect to an
+                  Express backend that handles telemetry and Google Gemini requests.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>What I Learned</h4>
+                <p>
+                  Full-stack development, modular architecture, API integration,
+                  user workflow design, and building around a practical
+                  productivity problem.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4>Next</h4>
+                <p>
+                  Canvas integration, Google Calendar sync, authentication,
+                  cloud persistence, multi-device support, and mobile.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="case-tech">
+              <span>React 18</span>
+              <span>JavaScript</span>
+              <span>Vite</span>
+              <span>Tailwind CSS</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>Google Gemini</span>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section white-section" id="experience">
+    <div class="container">
+
+      <p class="section-label">EXPERIENCE</p>
+
+      <h2 class="section-title">
+        Experience that shaped how I work.
+      </h2>
+
+      <div class="experience-grid">
+
+        <article class="experience-card" id="jsu-experience">
+          <p class="experience-date">MAY 2025 — JUL 2025</p>
+          <h3>Technology Operations Remote Internship</h3>
+          <p class="experience-company">Jackson State University</p>
+          <p class="experience-description">
+            Coordinated assignments and status tracking across 20+ remote peers,
+            maintained documentation, monitored deadlines, communicated blockers,
+            and used structured troubleshooting during technical activities.
+          </p>
+        </article>
+
+        <article class="experience-card" id="webacy-experience">
+          <p class="experience-date">JUL 2024 — AUG 2024</p>
+          <h3>Technology Research Extern</h3>
+          <p class="experience-company">Webacy</p>
+          <p class="experience-description">
+            Researched blockchain and Web3 technologies, developed competitor
+            profiles, analyzed technical information, and turned complex findings
+            into clear reports.
+          </p>
+        </article>
+
+        <article class="experience-card">
+          <p class="experience-date">DEC 2022 — JAN 2023</p>
+          <h3>Sales Associate</h3>
+          <p class="experience-company">Bath &amp; Body Works</p>
+          <p class="experience-description">
+            Worked directly with customers, identified needs, recommended products,
+            communicated clearly, and collaborated with teammates in a fast-paced environment.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-section" id="skills">
+    <div class="container">
+
+      <p class="section-label">SKILLS</p>
+
+      <h2 class="section-title">
+        Skills &amp; Tools
+      </h2>
+
+      <p class="section-intro">
+        Technical, analytical, and delivery skills I’ve used across projects,
+        research, and team-based work.
+      </p>
+
+      <div class="skills">
+        <a href="#education" class="skill">Computer Engineering</a>
+        <span class="skill">Analytical Thinking</span>
+        <a href="#jsu-experience" class="skill">Documentation</a>
+        <a href="#jsu-experience" class="skill">Project Coordination</a>
+        <a href="#jsu-experience" class="skill">Cross-functional Collaboration</a>
+        <a href="#assettrack-case" class="skill">Requirements Gathering</a>
+        <a href="#jsu-experience" class="skill">Technical Troubleshooting</a>
+        <a href="#assettrack-case" class="skill">Software Testing</a>
+        <a href="#webacy-experience" class="skill">Data Analysis</a>
+        <span class="skill">Problem Solving</span>
+        <span class="skill">Time Management</span>
+        <a href="#projects" class="skill">JavaScript</a>
+        <a href="#projects" class="skill">TypeScript</a>
+        <a href="#projects" class="skill">HTML</a>
+        <a href="#projects" class="skill">CSS</a>
+        <a href="#projects" class="skill">React</a>
+        <a href="#projects" class="skill">Node.js</a>
+        <a href="#projects" class="skill">Express</a>
+        <a href="#projects" class="skill">Git</a>
+        <a
+          href="https://github.com/pariscole"
+          class="skill"
+          target="_blank"
+        >
+          GitHub
+        </a>
+        <a href="#jsu-experience" class="skill">Jira</a>
+        <a href="#jsu-experience" class="skill">Asana</a>
+        <span class="skill">Microsoft Excel</span>
+        <span class="skill">Microsoft Office</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white-section">
+    <div class="container credential-grid">
+
+      <div class="info-card" id="education">
+        <p class="section-label">EDUCATION</p>
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-item">
+          <div class="logo-box">
+            <img
+              src="IMG_7426.jpeg"
+              alt="Jackson State University logo"
+            />
+          </div>
+
+          <div>
+            <h3>Jackson State University</h3>
+            <p>B.S. Computer Engineering</p>
+            <strong>May 2026 · Cum Laude · GPA 3.40</strong>
+          </div>
+        </div>
+
+        <div class="education-item">
+          <div class="logo-box">
+            <img
+              src="IMG_7431.png"
+              alt="Mississippi State University logo"
+            />
+          </div>
+
+          <div>
+            <h3>Mississippi State University</h3>
+            <p>MBA, Project Management</p>
+            <strong>Expected May 2028 · Online</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card" id="credentials">
+        <p class="section-label">CREDENTIALS</p>
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="cert-item">
+          <div class="logo-box microsoft">
+            <img
+              src="IMG_7428.jpeg"
+              alt="Microsoft logo"
+            />
+          </div>
+
+          <div>
+            <h3>
+              Microsoft Certified: Security, Compliance, and Identity Fundamentals
+            </h3>
+            <p>Microsoft · Issued Jul 2025</p>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="logo-box google">
+            <img
+              src="IMG_7454.jpeg"
+              alt="Google Coursera logo"
+            />
+          </div>
+
+          <div>
+            <h3>Google Cybersecurity Professional Certificate</h3>
+            <p>Google / Coursera · Issued Jun 2025</p>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="logo-box">
+            <img
+              src="IMG_7429.png"
+              alt="Mississippi Coding Academies logo"
+            />
+          </div>
+
+          <div>
+            <h3>
+              Workforce 360: Code to Career — Certificate of Completion
+            </h3>
+            <p>
+              Mississippi Coding Academies · 360 Hours · Issued Oct 2025
+            </p>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="logo-box">
+            <img
+              src="IMG_7430.jpeg"
+              alt="Black Venture Capital Consortium logo"
+            />
+          </div>
+
+          <div>
+            <h3>Fall 2025 PM Certificate</h3>
+            <p>Black Venture Capital Consortium · Issued Dec 2025</p>
+          </div>
+        </div>
+
+        <a
+          href="https://www.linkedin.com/in/pariszcoleman"
+          target="_blank"
+          style="
+            color:#7547f5;
+            font-weight:800;
+            font-size:12px;
+          "
+        >
+          View credentials on LinkedIn ↗
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-card">
+
+        <div>
+          <p class="section-label">LET’S CONNECT</p>
+
+          <h2>
+            Let’s build something meaningful.
+          </h2>
+
+          <p>
+            I’m interested in opportunities where I can keep growing technically
+            while learning how strong teams plan, communicate, execute, and deliver
+            technology that matters.
+          </p>
+        </div>
+
+        <div class="contact-buttons">
+          <a href="mailto:Pariscoleman433@gmail.com">
+            Email ↗
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/pariszcoleman"
+            target="_blank"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a
+            href="https://github.com/pariscole"
+            target="_blank"
+          >
+            GitHub ↗
+          </a>
+
+          <a
+            href="Paris_Coleman_Resume.pdf"
+            target="_blank"
+          >
+            Resume ↓
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Paris Coleman
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", function () {
+      const opened = mobileMenu.classList.toggle("open");
+      menuButton.textContent = opened ? "✕" : "☰";
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.remove("open");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    const aboutToggle = document.getElementById("aboutToggle");
+    const aboutMore = document.getElementById("aboutMore");
+
+    aboutToggle.addEventListener("click", function () {
+      const opened = aboutMore.classList.toggle("open");
+      aboutToggle.textContent = opened ? "Show less ↑" : "Read more ↓";
+    });
+
+    document.querySelectorAll('a[href$="-case"]').forEach(function (link) {
+      link.addEventListener("click", function () {
+        const targetId = link.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+
+        if (target && target.tagName === "DETAILS") {
+          target.open = true;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
